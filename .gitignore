@@ -1,2 +1,4 @@
 #Exclusión  de la carpeta del entorno de desarrollo.
 env/
+#exclusión cache
+_pycache_/
