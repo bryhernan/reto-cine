@@ -10,3 +10,7 @@ app.config['SECRET_KEY'] = SECRET_KEY
 @app.route("/inicio")
 def index():
     return render_template('inicio.html')
+
+@app.route("/inicioSesion")
+def inicioSesion():
+    return render_template('inicioSesion.html')
