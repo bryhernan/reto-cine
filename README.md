@@ -1,4 +1,4 @@
 # reto-cine
-reto del mintoc para cine
+reto del min-toc para cine
 
 mao
