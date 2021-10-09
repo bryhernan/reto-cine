@@ -2,3 +2,5 @@
 env/
 #exclusión cache
 _pycache_/
+#exclusion.pyc
+*.pyc
