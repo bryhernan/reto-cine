@@ -14,3 +14,15 @@ def index():
 @app.route("/inicioSesion")
 def inicioSesion():
     return render_template('inicioSesion.html')
+
+@app.route("/detallePelicula")
+def detallePelicula():
+    return render_template('detallePelicula.html')
+
+@app.route("/cartelera")
+def cartelera():
+    return render_template('cartelera.html')
+
+@app.route("/estrenos")
+def estrenos():
+    return render_template('estrenos.html')
