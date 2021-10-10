@@ -1,24 +1,14 @@
 {% extends "layout.html" %}
 {% block contenedor %}
-<div class="container-fluid">
-    
-    <div class="card-columns">
-        <div class="card">
-            <img class="card-img-top" src="holder.js/100x180/" alt="">
-            <div class="card-body">
-                <h4 class="card-title">Title</h4>
-                <p class="card-text">Text</p>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top" src="holder.js/100x180/" alt="">
-            <div class="card-body">
-                <h4 class="card-title">Title</h4>
-                <p class="card-text">Text</p>
-            </div>
+<div id="contenedor_vistas">
+    <link rel="stylesheet" href="/static/css/inicio_de_sesion_estilo.css">
+    <div class="container-fluid">
+    <div class="card" id="cartaMain_inicio_de_sesion">
+        <div class="card-body" id="cartaCapa1_inicio_de_sesion">
+            <h4 class="card-title" style="font-weight: bold;">Iniciar Sesión</h4>
+            <p class="card-text">Ingresa con tu correo y contraseña registrados.</p>
         </div>
     </div>
-
-</div>
-    
+    </div>
+</div>   
 {% endblock %}
