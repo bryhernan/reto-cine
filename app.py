@@ -1,6 +1,8 @@
 from flask import Flask, request, render_template
 import os
 
+from forms import FormInicioSesion
+
 app = Flask(__name__)
 
 SECRET_KEY = os.urandom(32)
@@ -11,9 +13,16 @@ app.config['SECRET_KEY'] = SECRET_KEY
 def index():
     return render_template('inicio.html')
 
-@app.route("/inicioSesion")
+@app.route("/inicioSesion", methods=["GET","POST"])
 def inicioSesion():
-    return render_template('inicioSesion.html')
+    if request.method == "GET":
+            formularioI = FormInicioSesion()
+            return render_template('inicioSesion.html', formI = formularioI)
+    else:
+        formularioI = FormInicioSesion(request.form)
+        if formularioI.validate_on_submit():
+            return render_template('inicio.html', errores ="Bienvenido" )
+        return render_template('inicioSesion.html', formI = formularioI, errores = "Todos los datos son obligatorios")
 
 @app.route("/detallePelicula")
 def detallePelicula():
