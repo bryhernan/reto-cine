@@ -35,3 +35,7 @@ def cartelera():
 @app.route("/estrenos")
 def estrenos():
     return render_template('estrenos.html')
+
+@app.route("/registro")
+def registro():
+    return render_template('registro.html')

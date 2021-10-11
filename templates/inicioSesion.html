@@ -2,14 +2,17 @@
 {% block contenedor %}
 <link rel="stylesheet" href="/static/css/inicio_de_sesion_estilo.css">
 <div class="container-fluid pb-4 pt-4">
-    <div class="container">
-        <div class="card text-center" style="opacity: 0.8;">
-            <div class="card-body" id="cartaCapa1_inicio_de_sesion">
-                <h4 class="card-title" style="font-weight: bold;">Iniciar Sesión</h4>
+    <div class="container" id="contenedor_vistas">
+        <div class="card text-center" id="contenedor_transparencia">
+            <div class="card-body" id="carta_inicio_de_sesion">
+                <h4 class="card-title" id="cartaTitle_inicio_de_sesion">Iniciar Sesión</h4>
+                <p class="card-text" id="cartaBody1_inicio_de_sesion">Ingresa con tu correo y contraseña registrados.</p>
+                <p class="error-display" id="cartaErrores_inicio_de_sesion">
                 {% if errores %}
                     {{ errores }}
                 {% endif %}
-                <div class="container text-light mx-auto my-2" style="width: 80%; background-color: black;">
+                </p>
+                <div class="container text-light mx-auto my-2" id="contenedor_inputs">
                     <form action="{{ url_for('inicioSesion') }}" method="post" novalidate>
                         {{ formI.hidden_tag() }}
                         <div class="form-group">
@@ -19,14 +22,15 @@
                         <div class="form-group">
                             {{ formI.contrasena.label }}
                             {{ formI.contrasena(class="form-control") }}
-                        </div>
-                        <div class="form-group">
-                            {{ formI.ingreso(class="btn btn-dark") }}
-                        </div>
-                    </form>
-                    <p class="card-text">Ingresa con tu correo y contraseña registrados.</p>
+                        </div>  
                 </div>
-                
+                <div class="container text-light mx-auto my-2">
+                        <div class="form-group">
+                            {{ formI.ingreso(class="btn btn-dark", id="inicio_de_sesion_submit_button") }}
+                        </div>
+                </div>
+                </form>
+                    <p class="card-text" id="cartaFoot_inicio_de_sesion">¿No estás registrado? <a href="{{ url_for('registro') }}" id="cartaFootRegistro_inicio_de_sesion">Registrate aquí</a> </p>
             </div>
         </div>
     </div>

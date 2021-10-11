@@ -1,7 +1,54 @@
-body{background-image: url(/static/img/imagen_inicio.jpg);}
+body{
+    background-image: url(/static/img/imagen_inicio.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
 
-#contenedor_vistas{ 
-    margin: 20px;
+#contenedor_vistas{
+    margin: auto;
     display: flex;
     justify-content: center;
-    align-items: center;}
+    align-items: center;
+}
+
+#contenedor_transparencia{
+    background-color: rgba(255,255,255,.8);
+    max-width: 80%;
+    min-width: 50%;
+}
+
+#cartaTitle_inicio_de_sesion{
+    font-weight: bold;
+}
+
+#cartaErrores_inicio_de_sesion{
+    color: red;
+}
+
+#contenedor_inputs{
+    max-width: 95%;
+    min-width: 70%;
+    padding: 5%;
+    background-color: black;
+    text-align: left;
+}
+
+.form-group label::after{
+    content:"*" ;
+    color: red;
+}
+
+#inicio_de_sesion_submit_button{
+    background-color: black;
+    border-radius: 5px;
+    border-color: dimgray;
+    border-width: 1px;
+    font-weight: bold;
+    color: white;
+}
+
+#cartaFoot_inicio_de_sesion{
+    font-weight: bold;
+}
