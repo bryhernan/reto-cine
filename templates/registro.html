@@ -1,7 +1,76 @@
 {% extends "layout.html" %}
 {% block contenedor %}
 <div class="container-fluid text-center">
-    <p class="h1 text-center"> vista registro</p>
+    <div class="container" id="contenedor_vistas">
+        <div class="card text-center" id="contenedor_transparencia">
+            <div class="card-body" id="carta_registro">
+                <h4 class="card-title" id="cartaTitle_registro">Registro</h4>
+                <p class="card-text" id="cartaBody_registro">Ingresa los siguientes datos para crear tu cuenta</p>
+                <p class="error-display" id="cartaErrores_registro">
+                {% if errores %}
+                    {{ errores }}
+                {% endif %}
+                </p>
+                <div class="container text-light mx-auto my-2" id="contenedor_inputs">
+                    <form action="{{ url_for('registro') }}" method="post" novalidate>
+                        
+                        <div class="form-group">
+                            {{ formI.nombres.label }}
+                            {{ formI.nombres(class="form-control") }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ formI.apellidos.label}}
+                            {{ formI.apellidos(class="form-control")}}
+                        </div>
+
+                        <div class="form-group">
+                            {{ formI.contrasena.label}}
+                            {{ formI.contrasena(class="form-control") }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ formI.confirmarContrasena.label }}
+                            {{ formI.confirmarContrasena(class="form-control") }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ formI.email.label }}
+                            {{ formI.email(class="form-control") }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ formI.confirmarEmail.label }}
+                            {{ formI.confirmarEmail(class="form-control") }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ formI.tipoDocumento.label }}
+                            {{ formI.tipoDocumento}}
+                            {{ formI.numeroDocumento.label}}
+                            {{ formI.numeroDocumento(class="form-control")}}
+                        </div>
+
+                        <div class="form-group">
+                            {{ formI.fechaNacimiento.label }}
+                            {{ formI.fechaNacimiento(type="date")}}
+                        </div>
+
+                        <div class="form-group">
+                            {{ formI.celular.label }}
+                            {{ formI.celular(class="form-control") }}
+                        </div>
+                </div>
+                <div class="container text-light mx-auto my-2">
+                        <div class="form-group">
+                            {{ formI.ingreso(class="btn btn-dark", id="registro_submit_button")}}
+                        </div>
+                </div>
+                    </form>
+                    <p class="card-text" id="cartaFoot_registro">¿Ya estás registrado? <a href="{{ url_for('inicioSesion') }}" id="cartaFootInicioSesion_registro">Inicia sesión aquí</a> </p>
+            </div>
+        </div>
+    </div>
 </div>
     
 {% endblock %}

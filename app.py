@@ -1,7 +1,6 @@
 from flask import Flask, request, render_template
 import os
-
-from forms import FormInicioSesion
+from forms import FormInicioSesion, FormRegistro
 
 app = Flask(__name__)
 
@@ -38,4 +37,11 @@ def estrenos():
 
 @app.route("/registro")
 def registro():
-    return render_template('registro.html')
+    if request.method == "GET":
+            formularioI = FormRegistro()
+            return render_template('registro.html', formI = formularioI)
+    else:
+        formularioI = FormRegistro(request.form)
+        if formularioI.validate_on_submit():
+            return render_template('inicio.html', errores ="Registrado" )
+        return render_template('registro.html', formI = formularioI, errores = "Todos los datos son obligatorios")
