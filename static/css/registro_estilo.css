@@ -16,15 +16,8 @@ body{
 #contenedor_transparencia{
     background-color: rgba(255,255,255,.8);
     max-width: 80%;
-    min-width: 50%;
-}
-
-#cartaTitle_inicio_de_sesion{
-    font-weight: bold;
-}
-
-#cartaErrores_inicio_de_sesion{
-    color: red;
+    min-width: 60%;
+    margin-top: 2%;
 }
 
 #contenedor_inputs{
@@ -35,9 +28,22 @@ body{
     text-align: left;
 }
 
-.form-group label::after{
-    content:"*" ;
+#cartaTitle_registro{
+    font-weight: bold;
+}
+
+#cartaErrores_registro{
     color: red;
+}
+
+.form-group{
+    text-align: left;
+    margin: 5%;
+}
+
+.form-group label{
+    color: white;
+    font-weight: bold;
 }
 
 .form-control{
@@ -58,7 +64,39 @@ body{
     border-color: #6085af;
 }
 
-#inicio_de_sesion_submit_button{
+.form-group label::after{
+    content: "*";
+    color: red;
+    font-weight: bold;
+}
+
+#contenedor_documento{ 
+    display: flex;
+    margin: 5%;
+}
+
+
+#tipo_documento{   
+    max-width: 25%;
+}
+
+#numero_documento{
+    
+    max-width: 75%;
+}
+
+#fecha{
+    text-align: center;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.form-submit{
+    text-align: center !important;
+}
+
+#registro_submit_button{
+    margin: 5%;
     background-color: black;
     border-radius: 5px;
     border-color: dimgray;
@@ -67,7 +105,7 @@ body{
     color: white;
 }
 
-#inicio_de_sesion_submit_button:hover{
+#registro_submit_button:hover{
     background-color: gray;
     border-radius: 5px;
     border-color: white;
@@ -76,6 +114,6 @@ body{
     color: whitesmoke;
 }
 
-#cartaFoot_inicio_de_sesion{
+#cartaFoot_registro{
     font-weight: bold;
 }
