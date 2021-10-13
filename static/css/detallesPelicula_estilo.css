@@ -117,6 +117,7 @@
 }
 
 #opinarPelicula_comentario{
+    
     height: 200px;
 }
 
@@ -130,5 +131,23 @@
 
 .calificacion_pelicula{
     background: white;
+}
+
+@media only screen and (max-width: 600px){
+    #container_descripcion_pelicula{
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+
+    #container_datos_pelicula{
+        padding-left: 7%;
+        padding-right: 5%;
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+        float: left;
+    }
+    
 }
 
