@@ -8,9 +8,16 @@ SECRET_KEY = os.urandom(32)
 app.config['SECRET_KEY'] = SECRET_KEY
 
 @app.route("/")
-@app.route("/inicio")
-def index():
-    return render_template('inicio.html')
+@app.route("/cartelera", methods=["GET","POST"])
+def cartelera():
+    if request.method == "GET":
+            formularioI = FormBuscarPeli()
+            return render_template('cartelera.html', formI = formularioI)
+    else:
+        formularioI = FormBuscarPeli(request.form)
+        if formularioI.validate_on_submit():
+            return render_template('cartelera.html',formI = formularioI)
+        return render_template('cartelera.html',formI = formularioI, errores = "campo invalidado")
 
 @app.route("/inicioSesion", methods=["GET","POST"])
 def inicioSesion():
@@ -33,18 +40,6 @@ def detallePelicula():
         if formularioI.validate_on_submit():
             return render_template('detallePelicula.html',formI = formularioI)
         return render_template('detallePelicula.html',formI = formularioI, errores = "campo invalidado")
-
-@app.route("/cartelera", methods=["GET","POST"])
-def cartelera():
-    if request.method == "GET":
-            formularioI = FormBuscarPeli()
-            return render_template('cartelera.html', formI = formularioI)
-    else:
-        formularioI = FormBuscarPeli(request.form)
-        if formularioI.validate_on_submit():
-            return render_template('cartelera.html',formI = formularioI)
-        return render_template('cartelera.html',formI = formularioI, errores = "campo invalidado")
-
 
 @app.route("/estrenos")
 def estrenos():
