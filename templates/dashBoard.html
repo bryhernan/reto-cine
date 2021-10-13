@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block contenedor %}
+<div class="container-fluid">
+    <nav nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand p-0" href="{{ url_for('crearPelicula') }}"> DasBoard
+
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Administrar Peliculas
+                    </a>
+                    <div class="dropdown-menu " style="background-color: #343a40;" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item text-light" href="{{ url_for('crearPelicula') }}">Crear Pelicula</a>
+                    <a class="dropdown-item text-light" href="#">Editar Pelicula</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Administrar Usuarios
+                    </a>
+                    <div class="dropdown-menu" style="background-color: #343a40;" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item text-light" href="#">Editar Usuario</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Administrar Administradores
+                    </a>
+                    <div class="dropdown-menu" style="background-color: #343a40;" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item text-light"  href="#">Crear pelicula</a>
+                    <a class="dropdown-item text-light" href="#">editar pelicula</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Administrar directores
+                    </a>
+                    <div class="dropdown-menu" style="background-color: #343a40;" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item text-light"  href="#">Crear pelicula</a>
+                    <a class="dropdown-item text-light" href="#">editar pelicula</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Administrar actores
+                    </a>
+                    <div class="dropdown-menu" style="background-color: #343a40;" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item text-light"  href="#">Crear pelicula</a>
+                    <a class="dropdown-item text-light" href="#">editar pelicula</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+     {% block admin  %}
+     {% endblock %}
+</div>
+    
+{% endblock %}
