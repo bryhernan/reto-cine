@@ -78,3 +78,20 @@ class FormEditarUsuario(FlaskForm):
     editar = SubmitField('Editar')
     eliminar = SubmitField('Eliminar')
 
+class FormRegistrarAdministradores(FlaskForm):
+    nombre = StringField('Nombres', validators=[validators.required(),validators.length(max=150)], id='nombre_registroAdministrador')
+    email = EmailField('Email', validators=[validators.required(),validators.length(max=50)], id='email_registroAdministrador')
+    contrasena = PasswordField('Contraseña', validators=[validators.required(),validators.length(max=30)], id='contrasena_registroAdministrador')
+    tipoDocumento = SelectField('Tipo de Documento', choices=[('cedulaCiudadania','Cédula de Ciudadanía'),('cedulaExtranjeria','Cédula de Extranjería'),('pasaporte','Pasaporte')])
+    numeroDocumento = StringField('Numero de Documento', validators=[validators.required(),validators.length(max=11)], id='numeroDocumento_registroAdministrador')
+    registrar = SubmitField('Registrar')
+
+class FormEditarAdministradores(FlaskForm):
+    nombre = StringField('Nombres', validators=[validators.length(max=150)], id='nombre_registroAdministrador')
+    email = EmailField('Email', validators=[validators.length(max=50)], id='email_registroAdministrador')
+    contrasena = PasswordField('Contraseña', validators=[validators.length(max=30)], id='contrasena_registroAdministrador')
+    tipoDocumento = SelectField('Tipo de Documento', choices=[('cedulaCiudadania','Cédula de Ciudadanía'),('cedulaExtranjeria','Cédula de Extranjería'),('pasaporte','Pasaporte')])
+    numeroDocumento = StringField('Numero de Documento', validators=[validators.length(max=11)], id='numeroDocumento_registroAdministrador')
+    registrar = SubmitField('Editar')
+    eliminar = SubmitField('Eliminar')
+

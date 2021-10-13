@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 import os
-from forms import FormInicioSesion, FormOpinarPelicula, FormRegistro, FormBuscarPeli, FormCrearPeli
+from forms import FormInicioSesion, FormOpinarPelicula, FormRegistro, FormBuscarPeli, FormCrearPeli, FormEditarUsuario, FormEditarPelicula, FormRegistrarAdministradores, FormEditarAdministradores
 
 app = Flask(__name__)
 
@@ -76,3 +76,47 @@ def crearPelicula():
 @app.route("/DetallesUsuario")
 def detallesUsuario():
     return render_template('detallesUsuario.html')
+
+@app.route("/editarPelicula", methods=["GET","POST"])
+def editarPelicula():
+    if request.method == "GET":
+        formularioI = FormEditarPelicula()
+        return render_template('editarPelicula.html', formI = formularioI)
+    else:
+        formularioI = FormEditarPelicula(request.form)
+        if formularioI.validate_on_submit():
+            return render_template('editarPelicula.html', errores = "Editado")
+        return render_template('editarPelicula',  formI = formularioI, errores = "Todos los datos son obligatorios")
+
+@app.route("/administrarUsuarios", methods=["GET","POST"])
+def administrarUsuarios():
+    if request.method == "GET":
+        formularioI = FormEditarUsuario()
+        return render_template('administrarUsuarios.html', formI = formularioI)
+    else:
+        formularioI = FormEditarUsuario(request.form)
+        if formularioI.validate_on_submit():
+            return render_template('administrarUsuarios.html', errores = "Editado")
+        return render_template('administrarUsuarios.html',  formI = formularioI, errores = "Todos los datos son obligatorios")
+
+@app.route("/administrarAdministradores", methods=["GET","POST"])
+def administrarAdministradores():
+    if request.method == "GET":
+        formularioI = FormEditarAdministradores()
+        return render_template('administrarAdministradores.html', formI = formularioI)
+    else:
+        formularioI = FormEditarAdministradores(request.form)
+        if formularioI.validate_on_submit():
+            return render_template('administrarAdministradores.html', errores = "Editado")
+        return render_template('administrarAdministradores.html',  formI = formularioI, errores = "Todos los datos son obligatorios")
+
+@app.route("/registroAdministradores", methods=["GET","POST"])
+def registroAdministradores():
+    if request.method == "GET":
+        formularioI = FormRegistrarAdministradores()
+        return render_template('registroAdministradores.html', formI = formularioI)
+    else:
+        formularioI = FormRegistrarAdministradores(request.form)
+        if formularioI.validate_on_submit():
+            return render_template('registroAdministradores.html', errores = "Editado")
+        return render_template('registroAdministradores.html',  formI = formularioI, errores = "Todos los datos son obligatorios")
