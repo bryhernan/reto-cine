@@ -1,0 +1,43 @@
+#container_formato_peliculas{
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+.column{
+    width: 25%;
+    padding: 2%;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+.movie-item{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 3%;
+    background-color: turquoise;
+    color: black;
+    border-radius: 10px;
+}
+
+.movie-item_image_container{
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    justify-content: center;
+}
+
+.movie-item_image{
+    padding-top: 4%;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.movie-item_description{
+    font-size: small;
+}
+
