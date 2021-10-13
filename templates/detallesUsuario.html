@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block contenedor %}
+<div class="row">
+    <div class="col-sm">
+        <img src="/static/img/CineColombiaImagotipo.png" width="140" height="60" class="d-inline-block align-top" alt="">
+    </div>
+    <div class="col-sm mx-auto">
+        <div class="container mx-auto">
+
+            <div class="container text-center">
+                <p class="h1 text">Detalles de usuario</p>
+            </div>
+            <table class="table table-responsive-sm table-dark mx-sm-3">
+                <thead>
+                    <tr>
+                      <th scope="col">datos</th>
+                      <th scope="col">informacion</th>
+                    </tr>
+                  </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Nombre</th>
+                        <td>luis ignacio matinez suarez</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Correo</th>
+                        <td>luis@uninorte.edu.co</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">Documento</th>
+                        <td>124126138</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">fecha de nacimiento</th>
+                        <td>15/06/97</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Celular</th>
+                        <td>3108835073</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+    
+{% endblock %}
