@@ -65,3 +65,16 @@ class FormEditarPelicula(FlaskForm):
     poster = FileField("Poster")
     crear = SubmitField('Editar')
 
+class FormEditarUsuario(FlaskForm):
+    idUsuario = StringField('ID usuario', validators=[validators.length(max=5)], id="idUsuario_editar")
+    nombres = StringField('Nombres', validators=[validators.length(max=150)], id='nombre_editar')
+    apellidos = StringField('Apellidos', validators=[validators.length(max=150)], id='apellidos_editar')
+    contrasena = PasswordField('Contraseña', validators=[validators.length(max=30)], id='contrasena_editar')
+    email = EmailField('Email', validators=[validators.length(max=50)], id='email_editar')
+    tipoDocumento = SelectField('Tipo de Documento', choices=[('cedulaCiudadania','Cédula de Ciudadanía'),('cedulaExtranjeria','Cédula de Extranjería'),('pasaporte','Pasaporte')])
+    numeroDocumento = StringField('Numero de Documento', validators=[validators.length(max=11)], id='numeroDocumento_editar')
+    fechaNacimiento = DateField('Fecha de Nacimiento', format='%Y-%M-%D')
+    celular = StringField('Numero celular', validators=[validators.length(max=10)], id='numeroCelular_editar')
+    editar = SubmitField('Editar')
+    eliminar = SubmitField('Eliminar')
+

@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 import os
-from forms import FormEditarPelicula, FormInicioSesion, FormOpinarPelicula, FormRegistro, FormBuscarPeli, FormCrearPeli
+from forms import FormEditarPelicula, FormEditarUsuario, FormInicioSesion, FormOpinarPelicula, FormRegistro, FormBuscarPeli, FormCrearPeli
 
 app = Flask(__name__)
 
@@ -83,3 +83,14 @@ def editarPelicula():
         if formularioI.validate_on_submit():
             return render_template('editarPelicula.html', errores = "Editado")
         return render_template('editarPelicula',  formI = formularioI, errores = "Todos los datos son obligatorios")
+
+@app.route("/administrarUsuarios", methods=["GET","POST"])
+def administrarUsuarios():
+    if request.method == "GET":
+        formularioI = FormEditarUsuario()
+        return render_template('administrarUsuarios.html', formI = formularioI)
+    else:
+        formularioI = FormEditarUsuario(request.form)
+        if formularioI.validate_on_submit():
+            return render_template('administrarUsuarios.html', errores = "Editado")
+        return render_template('administrarUsuarios.html',  formI = formularioI, errores = "Todos los datos son obligatorios")

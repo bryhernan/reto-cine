@@ -1,0 +1,70 @@
+{% extends "dashBoard.html" %}
+{% block admin %}
+<div class="container">
+    <form action="{{ url_for('crearPelicula') }}" method="post" novalidate>
+        {{ formI.hidden_tag() }}
+        {{ formI.peliculaModificar.label }}
+        {{ formI.peliculaModificar}}
+        <div class="row">
+            <div class="col-sm">
+                <div class="form-group">
+                    {{ formI.nombrePelicula.label }}
+                    {{ formI.nombrePelicula(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    {{ formI.nombrePeliculaOriginal.label }}
+                    {{ formI.nombrePeliculaOriginal(class="form-control") }}
+                    
+                </div>
+                <div class="form-group">
+                    {{ formI.fechaEstreno.label }}
+                    {{ formI.fechaEstreno(class="form-control") }}
+                    
+                </div>
+                <div class="form-group">
+                    {{ formI.duracion.label }}
+                    {{ formI.duracion(class="form-control") }}
+                    
+                </div>
+                <div class="form-group">
+                    {{ formI.resena.label }}
+                    {{ formI.resena(class="form-control") }}
+                    
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="form-group">
+                    {{ formI.actor.label }}
+                    {{ formI.actor(class="form-control") }}
+                    
+                </div>
+                <div class="form-group">
+                    {{ formI.Director.label }}
+                    {{ formI.Director(class="form-control") }}
+                    
+                </div>
+                <div class="form-group">
+                    {{ formI.genero.label }}
+                    {{ formI.genero(class="form-control") }}
+                    
+                </div>
+                <div class="form-group">
+                    {{ formI.clasificacion.label }}
+                    {{ formI.clasificacion(class="form-control") }}
+                    
+                </div>
+                <div class="form-group">
+                    {{ formI.poster.label }}
+                    {{ formI.poster(class="form-control") }}
+                    
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            {{ formI.crear(class="btn btn-dark", id="inicio_de_sesion_submit_button") }}
+        </div>
+    </form>
+    
+</div>
+    
+{% endblock %}
