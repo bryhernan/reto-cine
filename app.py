@@ -27,7 +27,7 @@ def inicioSesion():
     else:
         formularioI = FormInicioSesion(request.form)
         if formularioI.validate_on_submit():
-            return render_template('inicio.html', errores ="Bienvenido" )
+            return cartelera()
         return render_template('inicioSesion.html', formI = formularioI, errores = "Todos los datos son obligatorios")
 
 @app.route("/detallePelicula", methods=["GET","POST"])
@@ -56,8 +56,7 @@ def registro():
             return render_template('inicio.html', errores ="Registrado" )
         return render_template('registro.html', formI = formularioI, errores = "Todos los datos son obligatorios")
 
-
-@app.route("/crearPelicula")
+@app.route("/crearPelicula", methods=["GET","POST"])
 def crearPelicula():
     if request.method == "GET":
             formularioI = FormCrearPeli()
@@ -68,7 +67,7 @@ def crearPelicula():
             return render_template('crearPelicula.html', errores ="Registrada" )
         return render_template('crearPelicula.html', formI = formularioI, errores = "Todos los datos son obligatorios")
 
-@app.route("/DetallesUsuario")
+@app.route("/detallesUsuario")
 def detallesUsuario():
     return render_template('detallesUsuario.html')
 
