@@ -1,0 +1,47 @@
+{% extends "dashBoard.html" %}
+{% block admin %}
+<div class="container">
+
+    <div class="form-container" id="container_main_formulario">
+    <form action="{{ url_for('crearPelicula') }}" method="post" novalidate>
+        {{ formI.hidden_tag() }}
+        <div class="row">
+            <div class="col-sm">
+                <div class="form-group">
+                    {{ formI.nombre.label }}
+                    {{ formI.nombre(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    
+                </div>
+                <div class="form-group">
+                    {{ formI.contrasena.label}}
+                    {{ formI.contrasena(class="form-control") }}
+                    
+                </div>
+                <div class="form-group">
+                    {{ formI.email.label }}
+                    {{ formI.email(class="form-control") }}                    
+                </div>
+
+            </div>
+            <div class="col-sm">
+                    
+                <div class="form-group">
+                    <label>Documento de Identidad</label>
+                </div>
+
+                <div id="contenedor_documento">
+                    {{ formI.tipoDocumento(class="form-control" ,id="tipo_documento")}}
+                    {{ formI.numeroDocumento(class="form-control", id="numero_documento")}}
+                </div>                
+            </div>
+        </div>
+        <div class="form-group">
+            {{ formI.registrar(class="btn btn-dark", id="editarAdministrador_editDubmit_button") }}
+        </div>
+    </form>
+    </div>
+</div>
+    
+{% endblock %}

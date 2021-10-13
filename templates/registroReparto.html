@@ -2,49 +2,44 @@
 {% block admin %}
 <div class="container">
 
-    <div class="tab-pane" id="container_displayUsuarios">
-        <h2>tabla Administradores</h2>
-    </div>
-    
-
     <div class="form-container" id="container_main_formulario">
     <form action="{{ url_for('crearPelicula') }}" method="post" novalidate>
         {{ formI.hidden_tag() }}
         <div class="row">
             <div class="col-sm">
                 <div class="form-group">
-                    {{ formI.nombre.label }}
-                    {{ formI.nombre(class="form-control") }}
+                    {{ formI.nombres.label }}
+                    {{ formI.nombres(class="form-control") }}
                 </div>
                 <div class="form-group">
                     
                 </div>
                 <div class="form-group">
-                    {{ formI.contrasena.label}}
-                    {{ formI.contrasena(class="form-control") }}
+                    {{ formI.apellidos.label}}
+                    {{ formI.apellidos(class="form-control") }}
                     
                 </div>
                 <div class="form-group">
-                    {{ formI.email.label }}
-                    {{ formI.email(class="form-control") }}                    
+                    {{ formI.resena.label }}
+                    {{ formI.resena(class="form-control") }}                    
                 </div>
 
             </div>
             <div class="col-sm">
-                    
-                <div class="form-group">
-                    <label>Documento de Identidad</label>
-                </div>
 
                 <div id="contenedor_documento">
-                    {{ formI.tipoDocumento(class="form-control" ,id="tipo_documento")}}
-                    {{ formI.numeroDocumento(class="form-control", id="numero_documento")}}
+                    {{ formI.tipoPersona.label(class="form-control")}}
+                    {% for subfield in formI.tipoPersona %}
+                    <tr>
+                        <td>{{ subfield(class="radio-element") }}</td>
+                        <td>{{ subfield.label }}</td>
+                    </tr>
+                {% endfor %}
                 </div>                
             </div>
         </div>
         <div class="form-group">
             {{ formI.registrar(class="btn btn-dark", id="editarAdministrador_editDubmit_button") }}
-            {{ formI.eliminar(class="btn btn-dark", id="editarAdministrador_deleteSubmit_button") }}
         </div>
     </form>
     </div>

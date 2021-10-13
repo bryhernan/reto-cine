@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 import os
-from forms import FormInicioSesion, FormOpinarPelicula, FormRegistro, FormBuscarPeli, FormCrearPeli, FormEditarUsuario, FormEditarPelicula, FormRegistrarAdministradores, FormEditarAdministradores
+from forms import FormInicioSesion, FormOpinarPelicula, FormRegistro, FormBuscarPeli, FormCrearPeli, FormEditarUsuario, FormEditarPelicula, FormRegistrarAdministradores, FormEditarAdministradores, FormRegistrarReparto, FormEditarReparto
 
 app = Flask(__name__)
 
@@ -120,3 +120,25 @@ def registroAdministradores():
         if formularioI.validate_on_submit():
             return render_template('registroAdministradores.html', errores = "Editado")
         return render_template('registroAdministradores.html',  formI = formularioI, errores = "Todos los datos son obligatorios")
+
+@app.route("/registroReparto", methods=["GET","POST"])
+def registroReparto():
+    if request.method == "GET":
+        formularioI = FormRegistrarReparto()
+        return render_template('registroReparto.html', formI = formularioI)
+    else:
+        formularioI = FormRegistrarReparto(request.form)
+        if formularioI.validate_on_submit():
+            return render_template('registroReparto.html', errores = "Registrado")
+        return render_template('registroReparto.html',  formI = formularioI, errores = "Todos los datos son obligatorios")
+
+@app.route("/administrarReparto", methods=["GET","POST"])
+def administrarReparto():
+    if request.method == "GET":
+        formularioI = FormEditarReparto()
+        return render_template('administrarReparto.html', formI = formularioI)
+    else:
+        formularioI = FormEditarReparto(request.form)
+        if formularioI.validate_on_submit():
+            return render_template('administrarReparto.html', errores = "Editado")
+        return render_template('administrarReparto.html',  formI = formularioI, errores = "Todos los datos son obligatorios")

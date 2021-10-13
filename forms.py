@@ -95,3 +95,18 @@ class FormEditarAdministradores(FlaskForm):
     registrar = SubmitField('Editar')
     eliminar = SubmitField('Eliminar')
 
+class FormRegistrarReparto(FlaskForm):
+    nombres = StringField('Nombres', validators=[validators.required(),validators.length(max=150)], id='nombreRegistro_reparto')
+    apellidos = StringField('Apellidos', validators=[validators.required(),validators.length(max=150)], id='apellidosRegistro_reparto')
+    tipoPersona = RadioField("Tipo", validators=[validators.required()],choices=[("actor","Actor"),("director","Director")], id="tipoPersonaRegistro_opinarPelicula")
+    resena = StringField('Reseña', validators=[validators.required(),validators.length(max=1000)], id='reseñaRegistro_reparto')
+    registrar = SubmitField('Registrar')
+
+class FormEditarReparto(FlaskForm):
+    nombres = StringField('Nombres', validators=[validators.length(max=150)], id='nombreRegistroEditar_reparto')
+    apellidos = StringField('Apellidos', validators=[validators.length(max=150)], id='apellidosRegistroEditar_reparto')
+    tipoPersona = RadioField("Tipo", choices=[("actor","Actor"),("director","Director")], id="tipoPersonaRegistroEditar_opinarPelicula")
+    resena = StringField('Reseña', validators=[validators.length(max=1000)], id='reseñaRegistroEditar_reparto')
+    editar = SubmitField('Editar')
+    eliminar = SubmitField('Eliminar')
+

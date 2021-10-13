@@ -1,0 +1,49 @@
+{% extends "dashBoard.html" %}
+{% block admin %}
+<div class="container">
+
+    <div class="form-container" id="container_main_formulario">
+    <form action="{{ url_for('crearPelicula') }}" method="post" novalidate>
+        {{ formI.hidden_tag() }}
+        <div class="row">
+            <div class="col-sm">
+                <div class="form-group">
+                    {{ formI.nombres.label }}
+                    {{ formI.nombres(class="form-control") }}
+                </div>
+                <div class="form-group">
+                    
+                </div>
+                <div class="form-group">
+                    {{ formI.apellidos.label}}
+                    {{ formI.apellidos(class="form-control") }}
+                    
+                </div>
+                <div class="form-group">
+                    {{ formI.resena.label }}
+                    {{ formI.resena(class="form-control") }}                    
+                </div>
+
+            </div>
+            <div class="col-sm">
+
+                <div id="contenedor_documento">
+                    {{ formI.tipoPersona.label(class="form-control")}}
+                    {% for subfield in formI.tipoPersona %}
+                    <tr>
+                        <td>{{ subfield(class="radio-element") }}</td>
+                        <td>{{ subfield.label }}</td>
+                    </tr>
+                {% endfor %}
+                </div>                
+            </div>
+        </div>
+        <div class="form-group">
+            {{ formI.editar(class="btn btn-dark", id="editarAdministrador_editDubmit_button") }}
+            {{ formI.eliminar(class="btn btn-dark", id="editarAdministrador_editDubmit_button") }}
+        </div>
+    </form>
+    </div>
+</div>
+    
+{% endblock %}
