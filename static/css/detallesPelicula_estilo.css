@@ -1,0 +1,134 @@
+#contenedor_vistas{
+    background-color: white;
+}
+
+#main_container{
+    display: grid;
+    flex-wrap: wrap;
+    background-color: black;
+    width: max-content;
+}
+
+#container_descripcion_pelicula{
+    display: grid;
+}
+
+#banner_pelicula_cartelera_c{
+    display: inline-flex;
+    width: 100%;
+    background-color: black;
+    padding-left: 5%;
+}
+
+#banner_pelicula_cartelera{
+    width: 80%;
+    border-width: 10px;
+    border-color: white;
+    border-radius: 2px;
+}
+
+#basicData_pelicula{
+    font-weight: 600;
+    color: white; 
+}
+
+#container_descripcion_pelicula{
+    display: flex;
+    
+    box-sizing: border-box;
+}
+
+#container_datos_pelicula{
+    padding-left: 7%;
+    padding-right: 5%;
+    display: block;
+    width: 36%;
+    box-sizing: border-box;
+    float: left;
+}
+
+#sinopsis_container{
+    text-align: justify;
+    box-sizing: border-box;
+    float: left;
+}
+
+#reparto_container{
+    box-sizing: border-box;
+    float: left;
+}
+
+#container_display_funciones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 70%;
+}
+
+#container_fecha{
+}
+
+#container_funciones{
+    width: 100%;
+    height: 80%;
+    background-color: whitesmoke;
+    border-color: black;
+    
+}
+
+#container_calificacion_pelicula{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+#container_comentarios{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: whitesmoke;
+    margin-bottom: 2%;
+    height: 300px;
+}
+
+#container_opinar{
+    display: block;
+    flex-direction: row;
+    background-color: whitesmoke;
+    padding: 2%;
+}
+
+#opinar_array{
+    display: inline;
+}
+
+.radio-element{
+    
+}
+
+#calificacion_label{
+    font-weight: 600;
+}
+
+#comentario_label{
+    font-weight: 600;
+}
+
+#opinarPelicula_comentario{
+    height: 200px;
+}
+
+#opinar_submit{
+    margin-top: 2%;
+    text-align: center;
+}
+.descripcion_pelicula{
+    background-color: white;
+}
+
+.calificacion_pelicula{
+    background: white;
+}
+

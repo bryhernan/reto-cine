@@ -4,7 +4,7 @@ from wtforms.fields.core import StringField
 from wtforms.fields.simple import PasswordField, SubmitField
 from wtforms.fields.html5 import EmailField
 from wtforms.widgets import HiddenInput
-from wtforms.fields import SelectField, DateField
+from wtforms.fields import SelectField, DateField, RadioField
 
 class FormInicioSesion(FlaskForm):
     correo = StringField('Correo electrónico', validators=[validators.required(),validators.length(max=150)] )
@@ -31,3 +31,8 @@ class FormBuscarPeli(FlaskForm):
     genero = SelectField('Genero', choices=[('terror','terror'),('Accion','Accion'),('Aventura','Aventura')])
     clasificacion = SelectField('Clasificacion', choices=[('+18','+18'),('+16','+16'),('+12','+12')])
     buscar = SubmitField('Buscar')
+
+class FormOpinarPelicula(FlaskForm):
+    calificacion = RadioField("Calificación", choices=[("1","1"),("2","2"),("3","3"),("4","4"),("5","5")], id="calificacion_opinarPelicula")
+    comentario = StringField("Comentario", validators=[validators.length(max=1000)], id="comentario_opinarPelicula")
+    comentar = SubmitField('Comentar')

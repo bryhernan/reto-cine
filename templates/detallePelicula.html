@@ -1,7 +1,113 @@
 {% extends "layout.html" %}
 {% block contenedor %}
-<div class="container-fluid text-center">
-    <p class="h1 text-center">detalle de pelicula</p>
-</div>
-    
+<link rel="stylesheet" href="/static/css/detallesPelicula_estilo.css">
+<div class="container-fluid pb-4 pt-4" id="main_container">
+
+    <section class="banner-pelicula">
+
+        <div class="banner-group "id="banner_pelicula_cartelera_c">
+            <figure>
+                <img src="/static/img/pelicula_ejemplo.jpg" alt id="banner_pelicula_cartelera">
+            </figure>
+
+            <div class="banner-container" id="basicData_pelicula">
+
+                <h3 class="movie-item_title">Titulo Película</h2>
+                <p class="movie-item_tituloIngles">Titulo en ingles</p>
+                <p class="movie-item_fechaEstreno">Fecha de estreno</p>
+                <p class="movie-item_generos">Generos: Lorem ipsum dolor sit amet</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="descripcion_pelicula">
+        <div class="container-fluid pb-4 pt-4" id="container_descripcion_pelicula">
+
+            <div class="data-container" id="container_datos_pelicula">
+                
+                <div class="subData-container" id="sinopsis_container">
+
+                    <p id="datos_pelicula_sinopsis">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente distinctio odio porro doloremque corporis culpa numquam? Quo vel assumenda quaerat nobis laudantium, inventore aspernatur, sunt officia quod sequi est suscipit.
+                    </p>
+
+                </div>
+
+                <div class="subData-container" id="reparto_container">
+
+                   <div id="datos_pelicula_reparto_director">
+
+                        <p id="datos_pelicula_reparto_director_title">
+                            Director/es
+                        </p>
+
+                        <p id="datos_pelicula_reparto_director_Body">
+                            Marck Zuckerberg, Warner Bros.
+                        </p>
+                   </div>
+
+                   <div id="datos_pelicula_reparto_actor">
+                        <p id="datos_pelicula_reparto_actor_title">
+                            Reparto
+                        </p>
+                        <p id="datos_pelicula_reparto_actor_Body">
+                            Will Smith, Mark Anthony, Megan Fox, Picasso.
+                        </p>
+                   </div>
+
+                </div>
+
+            </div>
+
+            <div class="data-container" id="container_display_funciones">
+
+                <div class="function-container" id="container_fecha">
+                    <h4>Funciones</h4>
+                </div>
+
+                <div class="function-container" id="container_funciones">
+                    <h4>Container Funciones</h4>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="calificacion_pelicula">
+
+        <div class="container-fluid pb-4 pt-4" id="container_calificacion_pelicula"> 
+            <div class="comments-container" id="container_comentarios">
+                <h3>Container Comentarios</h3>
+            </div>
+
+            <div class="comments-container" id="container_opinar">
+                <div class="comments-group">
+                    <p class="comment-group" id="opinar_header"><h3>Comentar</h3>Califica la pelicula y deja tu comentario a continuación</p>
+                    <div class="comment-group" id="opinar_array">
+
+                        {{ formI.calificacion.label(id="calificacion_label")}}
+                        {% for subfield in formI.calificacion %}
+                            <tr>
+                                <td>{{ subfield(class="radio-element") }}</td>
+                                <td>{{ subfield.label }}</td>
+                            </tr>
+                        {% endfor %}
+
+                    </div>
+                    <div class="comment-group" id="opinar_tbx">
+                        {{ formI.comentario.label(id="comentario_label")}}
+                        {{ formI.comentario(class="form-control", id="opinarPelicula_comentario") }}
+                    </div>
+                    <div class="comment-group" id="opinar_submit">
+                        {{ formI.comentar(class="btn btn-dark", id="opinarPelicula_submit_bttn")}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>    
 {% endblock %}

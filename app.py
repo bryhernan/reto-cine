@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 import os
-from forms import FormInicioSesion, FormRegistro, FormBuscarPeli
+from forms import FormInicioSesion, FormOpinarPelicula, FormRegistro, FormBuscarPeli
 
 app = Flask(__name__)
 
@@ -23,17 +23,24 @@ def inicioSesion():
             return render_template('inicio.html', errores ="Bienvenido" )
         return render_template('inicioSesion.html', formI = formularioI, errores = "Todos los datos son obligatorios")
 
-@app.route("/detallePelicula")
+@app.route("/detallePelicula", methods=["GET","POST"])
 def detallePelicula():
-    return render_template('detallePelicula.html')
+    if request.method == "GET":
+            formularioI = FormOpinarPelicula()
+            return render_template('detallePelicula.html', formI = formularioI)
+    else:
+        formularioI = FormOpinarPelicula(request.form)
+        if formularioI.validate_on_submit():
+            return render_template('detallePelicula.html',formI = formularioI)
+        return render_template('detallePelicula.html',formI = formularioI, errores = "campo invalidado")
 
-@app.route("/cartelera")
+@app.route("/cartelera", methods=["GET","POST"])
 def cartelera():
     if request.method == "GET":
             formularioI = FormBuscarPeli()
             return render_template('cartelera.html', formI = formularioI)
     else:
-        formularioI = FormRegistro(request.form)
+        formularioI = FormBuscarPeli(request.form)
         if formularioI.validate_on_submit():
             return render_template('cartelera.html',formI = formularioI)
         return render_template('cartelera.html',formI = formularioI, errores = "campo invalidado")
@@ -43,7 +50,7 @@ def cartelera():
 def estrenos():
     return render_template('estrenos.html')
 
-@app.route("/registro")
+@app.route("/registro", methods=["GET","POST"])
 def registro():
     if request.method == "GET":
             formularioI = FormRegistro()
