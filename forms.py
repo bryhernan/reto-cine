@@ -3,8 +3,7 @@ from wtforms import validators
 from wtforms.fields.core import StringField
 from wtforms.fields.simple import PasswordField, SubmitField, TextAreaField
 from wtforms.fields.html5 import EmailField
-from wtforms.widgets import HiddenInput
-from wtforms.fields import SelectField, RadioField
+from wtforms.fields import SelectField, RadioField, FileField
 from wtforms.fields.html5 import TimeField, DateField
 
 
@@ -40,14 +39,29 @@ class FormOpinarPelicula(FlaskForm):
     comentar = SubmitField('Comentar')
 
 class FormCrearPeli(FlaskForm):
-    nombrePelicula = StringField('Pelicula ', validators=[validators.required(),validators.length(max=150)] )
-    nombrePeliculaOriginal = StringField('Pelicula ', validators=[validators.required(),validators.length(max=150)])
+    nombrePelicula = StringField('Titulo película ', validators=[validators.required(),validators.length(max=150)] )
+    nombrePeliculaOriginal = StringField('Titulo original película', validators=[validators.required(),validators.length(max=150)])
     fechaEstreno = DateField('Fecha de estreno', validators=[validators.required(),validators.required()], format='%Y-%M-%D')
     duracion = TimeField('duracion ', validators=[validators.required()])
-    resena = TextAreaField('Reseña',validators=[validators.required(),validators.required()])
+    resena = TextAreaField('Sinopsis',validators=[validators.required(),validators.required()])
     actor = SelectField('Actor', choices=[('terror','terror'),('Accion','Accion'),('Aventura','Aventura')])
     Director = SelectField('Director', choices=[('terror','terror'),('Accion','Accion'),('Aventura','Aventura')])
     genero = SelectField('Genero', choices=[('terror','terror'),('Accion','Accion'),('Aventura','Aventura')])
     clasificacion = SelectField('Clasificacion', choices=[('+18','+18'),('+16','+16'),('+12','+12')])
+    poster = FileField("Poster")
     crear = SubmitField('crear')
+
+class FormEditarPelicula(FlaskForm):
+    peliculaModificar = SelectField('Película a modificar', choices=[('0000','007: Sin tiempo para morir'),('0001','Hello Kitty')])
+    nombrePelicula = StringField('Titulo película ', validators=[validators.required(),validators.length(max=150)] )
+    nombrePeliculaOriginal = StringField('Titulo original película', validators=[validators.required(),validators.length(max=150)])
+    fechaEstreno = DateField('Fecha de estreno', validators=[validators.required(),validators.required()], format='%Y-%M-%D')
+    duracion = TimeField('duracion ', validators=[validators.required()])
+    resena = TextAreaField('Sinopsis',validators=[validators.required(),validators.required()])
+    actor = SelectField('Actor', choices=[('terror','terror'),('Accion','Accion'),('Aventura','Aventura')])
+    Director = SelectField('Director', choices=[('terror','terror'),('Accion','Accion'),('Aventura','Aventura')])
+    genero = SelectField('Genero', choices=[('terror','terror'),('Accion','Accion'),('Aventura','Aventura')])
+    clasificacion = SelectField('Clasificacion', choices=[('+18','+18'),('+16','+16'),('+12','+12')])
+    poster = FileField("Poster")
+    crear = SubmitField('Editar')
 
