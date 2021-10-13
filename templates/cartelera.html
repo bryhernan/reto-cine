@@ -3,136 +3,182 @@
 <link rel="stylesheet" href="/static/css/displayPeliculas_estilo.css">
 <aside class="bd-sidebar" style="background-color: black;"></aside>
 <div class="container container--full-width u-pt-7-mobile u-pb-7-mobile u-pt-0-desktop" id="container_peliculas">
-    <div class="columns is-multiline columns--slim" id="container_formato_peliculas">
-        <div data-aos="fade-up" data-aos-delay="0" class="column is-3 aos-init aos-animate">
-            <a href="{{ url_for('detallePelicula') }}" class="movie-item">
-                <div class="movie-item_image_container">
-                    <figure class="movie-item_image">
-                        <img src="/static/img/pelicula_ejemplo.jpg" class="movie-item_image" alt height="450" width="300">
-                    </figure>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="container text-light mx-auto my-2" id="contenedor_inputs"style="background-color: black;">
+                <div class="container text-center">
+                    <p class="h4">Filtro</p>
+    
                 </div>
-                <div class="movie-item_description">
-                    <h3 class="movie-item_title">Titulo Película</h2>
-                    <p class="movie-item_tituloIngles">Titulo en ingles</p>
-                    <p class="movie-item_fechaEstreno">Fecha de estreno</p>
-                    <p class="movie-item_generos">Generos: Lorem ipsum dolor sit amet</p>
-                </div>
-            </a>
+                <form action="{{ url_for('cartelera') }}" method="post" novalidate>
+                    {{ formI.hidden_tag() }}
+                    <div class="form-group">
+                        {{ formI.nombrePelicula.label }}
+                        {{ formI.nombrePelicula(class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ formI.director.label }}
+                        {{ formI.director(class="form-control") }}
+                        
+                    </div>
+                    <div class="form-group">
+                        {{ formI.actor.label }}
+                        {{ formI.actor(class="form-control") }}
+                        
+                    </div>
+                    <div class="form-group">
+                        {{ formI.genero.label }}
+                        {{ formI.genero(class="form-control") }}
+                        
+                    </div>
+                    <div class="form-group">
+                        {{ formI.clasificacion.label }}
+                        {{ formI.clasificacion(class="form-control") }}
+                        
+                    </div>
+                    <div class="container text-light mx-auto my-2">
+                        <div class="form-group">
+                            {{ formI.buscar(class="btn btn-dark", id="inicio_de_sesion_submit_button") }}
+                        </div>
+                </div>  
+            </div>
+            
         </div>
-
-        <div data-aos="fade-up" data-aos-delay="0" class="column is-3 aos-init aos-animate">
-            <a href="{{ url_for('detallePelicula') }}" class="movie-item">
-                <div class="movie-item_image_container">
-                    <figure class="movie-item_image">
-                        <img src="/static/img/pelicula_ejemplo.jpg" class="movie-item_image" alt height="450" width="300">
-                    </figure>
+        <div class="col-sm">
+            <div class="columns is-multiline columns--slim" id="container_formato_peliculas">
+                <div data-aos="fade-up" data-aos-delay="0" class="column is-3 aos-init aos-animate">
+                    <a href="{{ url_for('detallePelicula') }}" class="movie-item">
+                        <div class="movie-item_image_container">
+                            <figure class="movie-item_image">
+                                <img src="/static/img/pelicula_ejemplo.jpg" class="movie-item_image" alt height="450" width="300">
+                            </figure>
+                        </div>
+                        <div class="movie-item_description">
+                            <h3 class="movie-item_title">Titulo Película</h2>
+                            <p class="movie-item_tituloIngles">Titulo en ingles</p>
+                            <p class="movie-item_fechaEstreno">Fecha de estreno</p>
+                            <p class="movie-item_generos">Generos: Lorem ipsum dolor sit amet</p>
+                        </div>
+                    </a>
                 </div>
-                <div class="movie-item_description">
-                    <h3 class="movie-item_title">Titulo Película</h2>
-                    <p class="movie-item_tituloIngles">Titulo en ingles</p>
-                    <p class="movie-item_fechaEstreno">Fecha de estreno</p>
-                    <p class="movie-item_generos">Generos: Lorem ipsum dolor sit amet</p>
+        
+                <div data-aos="fade-up" data-aos-delay="0" class="column is-3 aos-init aos-animate">
+                    <a href="{{ url_for('detallePelicula') }}" class="movie-item">
+                        <div class="movie-item_image_container">
+                            <figure class="movie-item_image">
+                                <img src="/static/img/pelicula_ejemplo.jpg" class="movie-item_image" alt height="450" width="300">
+                            </figure>
+                        </div>
+                        <div class="movie-item_description">
+                            <h3 class="movie-item_title">Titulo Película</h2>
+                            <p class="movie-item_tituloIngles">Titulo en ingles</p>
+                            <p class="movie-item_fechaEstreno">Fecha de estreno</p>
+                            <p class="movie-item_generos">Generos: Lorem ipsum dolor sit amet</p>
+                        </div>
+                    </a>
                 </div>
-            </a>
+        
+                <div data-aos="fade-up" data-aos-delay="0" class="column is-3 aos-init aos-animate">
+                    <a href="{{ url_for('detallePelicula') }}" class="movie-item">
+                        <div class="movie-item_image_container">
+                            <figure class="movie-item_image">
+                                <img src="/static/img/pelicula_ejemplo.jpg" class="movie-item_image" alt height="450" width="300">
+                            </figure>
+                        </div>
+                        <div class="movie-item_description">
+                            <h3 class="movie-item_title">Titulo Película</h2>
+                            <p class="movie-item_tituloIngles">Titulo en ingles</p>
+                            <p class="movie-item_fechaEstreno">Fecha de estreno</p>
+                            <p class="movie-item_generos">Generos: Lorem ipsum dolor sit amet</p>
+                        </div>
+                    </a>
+                </div>
+        
+                <div data-aos="fade-up" data-aos-delay="0" class="column is-3 aos-init aos-animate">
+                    <a href="{{ url_for('detallePelicula') }}" class="movie-item">
+                        <div class="movie-item_image_container">
+                            <figure class="movie-item_image">
+                                <img src="/static/img/pelicula_ejemplo.jpg" class="movie-item_image" alt height="450" width="300">
+                            </figure>
+                        </div>
+                        <div class="movie-item_description">
+                            <h3 class="movie-item_title">Titulo Película</h2>
+                            <p class="movie-item_tituloIngles">Titulo en ingles</p>
+                            <p class="movie-item_fechaEstreno">Fecha de estreno</p>
+                            <p class="movie-item_generos">Generos: Lorem ipsum dolor sit amet</p>
+                        </div>
+                    </a>
+                </div>
+        
+                <div data-aos="fade-up" data-aos-delay="0" class="column is-3 aos-init aos-animate">
+                    <a href="{{ url_for('detallePelicula') }}" class="movie-item">
+                        <div class="movie-item_image_container">
+                            <figure class="movie-item_image">
+                                <img src="/static/img/pelicula_ejemplo.jpg" class="movie-item_image" alt height="450" width="300">
+                            </figure>
+                        </div>
+                        <div class="movie-item_description">
+                            <h3 class="movie-item_title">Titulo Película</h2>
+                            <p class="movie-item_tituloIngles">Titulo en ingles</p>
+                            <p class="movie-item_fechaEstreno">Fecha de estreno</p>
+                            <p class="movie-item_generos">Generos: Lorem ipsum dolor sit amet</p>
+                        </div>
+                    </a>
+                </div>
+        
+                <div data-aos="fade-up" data-aos-delay="0" class="column is-3 aos-init aos-animate">
+                    <a href="{{ url_for('detallePelicula') }}" class="movie-item">
+                        <div class="movie-item_image_container">
+                            <figure class="movie-item_image">
+                                <img src="/static/img/pelicula_ejemplo.jpg" class="movie-item_image" alt height="450" width="300">
+                            </figure>
+                        </div>
+                        <div class="movie-item_description">
+                            <h3 class="movie-item_title">Titulo Película</h2>
+                            <p class="movie-item_tituloIngles">Titulo en ingles</p>
+                            <p class="movie-item_fechaEstreno">Fecha de estreno</p>
+                            <p class="movie-item_generos">Generos: Lorem ipsum dolor sit amet</p>
+                        </div>
+                    </a>
+                </div>
+        
+                <div data-aos="fade-up" data-aos-delay="0" class="column is-3 aos-init aos-animate">
+                    <a href="{{ url_for('detallePelicula') }}" class="movie-item">
+                        <div class="movie-item_image_container">
+                            <figure class="movie-item_image">
+                                <img src="/static/img/pelicula_ejemplo.jpg" class="movie-item_image" alt height="450" width="300">
+                            </figure>
+                        </div>
+                        <div class="movie-item_description">
+                            <h3 class="movie-item_title">Titulo Película</h2>
+                            <p class="movie-item_tituloIngles">Titulo en ingles</p>
+                            <p class="movie-item_fechaEstreno">Fecha de estreno</p>
+                            <p class="movie-item_generos">Generos: Lorem ipsum dolor sit amet</p>
+                        </div>
+                    </a>
+                </div>
+        
+                <div data-aos="fade-up" data-aos-delay="0" class="column is-3 aos-init aos-animate">
+                    <a href="{{ url_for('detallePelicula') }}" class="movie-item">
+                        <div class="movie-item_image_container">
+                            <figure class="movie-item_image">
+                                <img src="/static/img/pelicula_ejemplo.jpg" class="movie-item_image" alt height="450" width="300">
+                            </figure>
+                        </div>
+                        <div class="movie-item_description">
+                            <h3 class="movie-item_title">Titulo Película</h2>
+                            <p class="movie-item_tituloIngles">Titulo en ingles</p>
+                            <p class="movie-item_fechaEstreno">Fecha de estreno</p>
+                            <p class="movie-item_generos">Generos: Lorem ipsum dolor sit amet</p>
+                        </div>
+                    </a>
+                </div>
+        
+            </div>
         </div>
-
-        <div data-aos="fade-up" data-aos-delay="0" class="column is-3 aos-init aos-animate">
-            <a href="{{ url_for('detallePelicula') }}" class="movie-item">
-                <div class="movie-item_image_container">
-                    <figure class="movie-item_image">
-                        <img src="/static/img/pelicula_ejemplo.jpg" class="movie-item_image" alt height="450" width="300">
-                    </figure>
-                </div>
-                <div class="movie-item_description">
-                    <h3 class="movie-item_title">Titulo Película</h2>
-                    <p class="movie-item_tituloIngles">Titulo en ingles</p>
-                    <p class="movie-item_fechaEstreno">Fecha de estreno</p>
-                    <p class="movie-item_generos">Generos: Lorem ipsum dolor sit amet</p>
-                </div>
-            </a>
-        </div>
-
-        <div data-aos="fade-up" data-aos-delay="0" class="column is-3 aos-init aos-animate">
-            <a href="{{ url_for('detallePelicula') }}" class="movie-item">
-                <div class="movie-item_image_container">
-                    <figure class="movie-item_image">
-                        <img src="/static/img/pelicula_ejemplo.jpg" class="movie-item_image" alt height="450" width="300">
-                    </figure>
-                </div>
-                <div class="movie-item_description">
-                    <h3 class="movie-item_title">Titulo Película</h2>
-                    <p class="movie-item_tituloIngles">Titulo en ingles</p>
-                    <p class="movie-item_fechaEstreno">Fecha de estreno</p>
-                    <p class="movie-item_generos">Generos: Lorem ipsum dolor sit amet</p>
-                </div>
-            </a>
-        </div>
-
-        <div data-aos="fade-up" data-aos-delay="0" class="column is-3 aos-init aos-animate">
-            <a href="{{ url_for('detallePelicula') }}" class="movie-item">
-                <div class="movie-item_image_container">
-                    <figure class="movie-item_image">
-                        <img src="/static/img/pelicula_ejemplo.jpg" class="movie-item_image" alt height="450" width="300">
-                    </figure>
-                </div>
-                <div class="movie-item_description">
-                    <h3 class="movie-item_title">Titulo Película</h2>
-                    <p class="movie-item_tituloIngles">Titulo en ingles</p>
-                    <p class="movie-item_fechaEstreno">Fecha de estreno</p>
-                    <p class="movie-item_generos">Generos: Lorem ipsum dolor sit amet</p>
-                </div>
-            </a>
-        </div>
-
-        <div data-aos="fade-up" data-aos-delay="0" class="column is-3 aos-init aos-animate">
-            <a href="{{ url_for('detallePelicula') }}" class="movie-item">
-                <div class="movie-item_image_container">
-                    <figure class="movie-item_image">
-                        <img src="/static/img/pelicula_ejemplo.jpg" class="movie-item_image" alt height="450" width="300">
-                    </figure>
-                </div>
-                <div class="movie-item_description">
-                    <h3 class="movie-item_title">Titulo Película</h2>
-                    <p class="movie-item_tituloIngles">Titulo en ingles</p>
-                    <p class="movie-item_fechaEstreno">Fecha de estreno</p>
-                    <p class="movie-item_generos">Generos: Lorem ipsum dolor sit amet</p>
-                </div>
-            </a>
-        </div>
-
-        <div data-aos="fade-up" data-aos-delay="0" class="column is-3 aos-init aos-animate">
-            <a href="{{ url_for('detallePelicula') }}" class="movie-item">
-                <div class="movie-item_image_container">
-                    <figure class="movie-item_image">
-                        <img src="/static/img/pelicula_ejemplo.jpg" class="movie-item_image" alt height="450" width="300">
-                    </figure>
-                </div>
-                <div class="movie-item_description">
-                    <h3 class="movie-item_title">Titulo Película</h2>
-                    <p class="movie-item_tituloIngles">Titulo en ingles</p>
-                    <p class="movie-item_fechaEstreno">Fecha de estreno</p>
-                    <p class="movie-item_generos">Generos: Lorem ipsum dolor sit amet</p>
-                </div>
-            </a>
-        </div>
-
-        <div data-aos="fade-up" data-aos-delay="0" class="column is-3 aos-init aos-animate">
-            <a href="{{ url_for('detallePelicula') }}" class="movie-item">
-                <div class="movie-item_image_container">
-                    <figure class="movie-item_image">
-                        <img src="/static/img/pelicula_ejemplo.jpg" class="movie-item_image" alt height="450" width="300">
-                    </figure>
-                </div>
-                <div class="movie-item_description">
-                    <h3 class="movie-item_title">Titulo Película</h2>
-                    <p class="movie-item_tituloIngles">Titulo en ingles</p>
-                    <p class="movie-item_fechaEstreno">Fecha de estreno</p>
-                    <p class="movie-item_generos">Generos: Lorem ipsum dolor sit amet</p>
-                </div>
-            </a>
-        </div>
-
+        
     </div>
+    
 </div>
     
 {% endblock %}

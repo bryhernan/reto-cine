@@ -23,3 +23,11 @@ class FormRegistro(FlaskForm):
     fechaNacimiento = DateField('Fecha de Nacimiento', validators=[validators.required()], format='%Y-%M-%D')
     celular = StringField('Numero celular', validators=[validators.required(),validators.length(max=10)], id='numeroCelular_registro')
     ingreso = SubmitField('REGISTRAR') 
+
+class FormBuscarPeli(FlaskForm):
+    nombrePelicula = StringField('Pelicula ', validators=[validators.length(max=150)] )
+    director = StringField('Director ', validators=[validators.length(max=150)] )
+    actor = StringField('Actor ', validators=[validators.length(max=150)] )
+    genero = SelectField('Genero', choices=[('terror','terror'),('Accion','Accion'),('Aventura','Aventura')])
+    clasificacion = SelectField('Clasificacion', choices=[('+18','+18'),('+16','+16'),('+12','+12')])
+    buscar = SubmitField('Buscar')

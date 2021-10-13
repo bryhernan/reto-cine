@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 import os
-from forms import FormInicioSesion, FormRegistro
+from forms import FormInicioSesion, FormRegistro, FormBuscarPeli
 
 app = Flask(__name__)
 
@@ -29,7 +29,15 @@ def detallePelicula():
 
 @app.route("/cartelera")
 def cartelera():
-    return render_template('cartelera.html')
+    if request.method == "GET":
+            formularioI = FormBuscarPeli()
+            return render_template('cartelera.html', formI = formularioI)
+    else:
+        formularioI = FormRegistro(request.form)
+        if formularioI.validate_on_submit():
+            return render_template('cartelera.html',formI = formularioI)
+        return render_template('cartelera.html',formI = formularioI, errores = "campo invalidado")
+
 
 @app.route("/estrenos")
 def estrenos():
