@@ -1,22 +1,17 @@
 {% extends "layout.html" %}
 {% block contenedor %}
-<div class="row">
-    <div class="col-sm">
-        <img src="/static/img/CineColombiaImagotipo.png" width="140" height="60" class="d-inline-block align-top" alt="">
+<link rel="stylesheet" href="/static/css/detallesUsuario_estilo.css">
+<div class="principal-container" id="container_main">
+    <div class="container-imagen" id="container_imagen">
+        <img src="/static/img/CineColombiaIsotipo.jpg" id="imagen_item" alt>
     </div>
-    <div class="col-sm mx-auto">
-        <div class="container mx-auto">
+    <div class="col-sm mx-auto" id="container_datosUsuario_c">
+        <div class="container mx-auto" id="container_datosUsuario_c1">
 
             <div class="container text-center">
                 <p class="h1 text">Detalles de usuario</p>
             </div>
-            <table class="table table-responsive-sm table-dark mx-sm-3">
-                <thead>
-                    <tr>
-                      <th scope="col">datos</th>
-                      <th scope="col">informacion</th>
-                    </tr>
-                  </thead>
+            <table class="table table-responsive-md table-dark mx-sm-3" id="table_item">
                 <tbody>
                     <tr>
                         <th scope="row">Nombre</th>

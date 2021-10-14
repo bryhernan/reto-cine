@@ -1,0 +1,65 @@
+#container_main{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+#container_imagen{
+    display: block;
+    width: 25%;
+}
+
+#imagen_item{
+    display:flex;
+    width: 80%;
+    margin-left: 8%;
+    margin-top: 8%;
+}
+
+#container_datosUsuario_c{
+    background-color: black;
+    color: white;
+    margin-top: 2%;
+}
+
+#container_datosUsuario_c1{
+    padding: 4%;
+}
+
+#table_item{
+    margin: 5%;
+}
+
+th{
+    height: 80px;
+}
+
+@media only screen and (max-width: 600px){
+    #container_main{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #container_imagen{
+        display: block;
+        width: 100%;
+    }
+
+    #container_datosUsuario_c{
+        display: block;
+        justify-content: center;
+        align-content: center;
+        background-color: black;
+        color: white;
+        margin-top: 2%;
+    }
+    
+    
+    th{
+        height: 70px;
+    }
+}
+
