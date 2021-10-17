@@ -54,7 +54,7 @@ def registro():
         formularioI = FormRegistro(request.form)
         if formularioI.validate_on_submit():
             return render_template('inicio.html', errores ="Registrado" )
-        return render_template('registro.html', formI = formularioI, errores = "Todos los datos son obligatorios")
+        return render_template('registro.html', formI = formularioI)
 
 @app.route("/crearPelicula", methods=["GET","POST"])
 def crearPelicula():
