@@ -32,7 +32,6 @@ def ejecutarSelect(_sql,listaParametros):
     try:
         conn = conectar()
         if conn:
-            conn.row_factory = fabricaDiccionarios()
             cursor = conn.cursor()
             if listaParametros:
                 cursor.execute(_sql,listaParametros)
@@ -55,3 +54,4 @@ def fabricaDiccionarios(cursor,row):
     for idx, col in enumerate(cursor.description):
         d[col[0]]= row[idx]
     return d 
+
