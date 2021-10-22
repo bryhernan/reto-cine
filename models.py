@@ -26,4 +26,4 @@ def tipoUsuarioS():
 
 def usuarriosS(id_usuario,nombres_usuario,apellidos_usuario,correo_usuario,fecha_nacimiento,celular,id_tipo_documento,id_tipo_usuario):
     sql= "EXEC CA_USUARIOS_S @id_usuario = ?,@nombres_usuario = ?,@apellidos_usuario = ?,@correo_usuario = ?,@fecha_nacimiento = ?,@celular = ?,@id_tipo_documento = ?,@id_tipo_usuario = ?"
-    return db.ejecutarSelect(sql,None)
+    return db.ejecutarSelect(sql,[id_usuario,nombres_usuario,apellidos_usuario,correo_usuario,fecha_nacimiento,celular,id_tipo_documento,id_tipo_usuario])
